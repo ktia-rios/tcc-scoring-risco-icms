@@ -1,0 +1,51 @@
+﻿id_empresa,cnae_descricao,situacao_desc,classe_risco,if_score,dbscan_outlier,score_manual_norm,score_final,classe_final,ranking,sancionada
+EMP_RJ_01317,Comércio varejista de combustíveis (postos),Ativa,Baixo,-0.2049664189039212,1,0.16666666666666666,0.75,Crítico,1,0
+EMP_RJ_01471,Comércio atacadista de combustíveis,Inapta,Alto,-0.09071191970158754,1,0.6666666666666666,0.7460547360337684,Crítico,2,0
+EMP_RJ_00781,Comércio varejista de combustíveis (postos),Inapta,Crítico,0.003067131542786261,1,1.0,0.7196978669466998,Crítico,3,0
+EMP_RJ_00985,Comércio varejista de combustíveis (postos),Inapta,Crítico,-0.02882796214811756,1,0.8333333333333334,0.7126729677239441,Crítico,4,0
+EMP_RJ_00675,Extração de petróleo e gás natural,Ativa,Alto,-0.0787303847733013,1,0.5833333333333334,0.7049109467726629,Crítico,5,0
+EMP_RJ_01360,Extração de petróleo e gás natural,Ativa,Alto,-0.059279185513632426,1,0.6666666666666666,0.703702613399404,Crítico,6,0
+EMP_RJ_00439,Comércio atacadista de combustíveis,Inapta,Crítico,0.016793291755018147,1,1.0,0.7012033886384734,Crítico,7,0
+EMP_RJ_01499,Comércio varejista de combustíveis (postos),Ativa,Alto,-0.07569832418924827,1,0.5833333333333334,0.7008255814677302,Crítico,8,0
+EMP_RJ_00164,Comércio varejista de combustíveis (postos),Inapta,Crítico,0.018185990018319553,1,1.0,0.6993268822140781,Alto,9,0
+EMP_RJ_00028,Comércio varejista de combustíveis (postos),Inapta,Crítico,0.018802411106706163,1,1.0,0.6984963231741406,Alto,10,0
+EMP_RJ_01413,Extração de petróleo e gás natural,Ativa,Alto,-0.052514745016389086,1,0.6666666666666666,0.6945882801766232,Alto,11,0
+EMP_RJ_01414,Extração de petróleo e gás natural,Ativa,Alto,-0.052514745016389086,1,0.6666666666666666,0.6945882801766232,Alto,11,0
+EMP_RJ_00298,Comércio varejista de combustíveis (postos),Inapta,Crítico,0.023353385432506035,1,1.0,0.6923643900880911,Alto,13,0
+EMP_RJ_00199,Comércio varejista de combustíveis (postos),Inapta,Crítico,0.023520614109730886,1,1.0,0.6921390679954135,Alto,14,0
+EMP_RJ_00122,Comércio varejista de combustíveis (postos),Suspensa,Alto,-0.04943803714759143,1,0.6666666666666666,0.6904427576080088,Alto,15,0
+EMP_RJ_01369,Comércio varejista de combustíveis (postos),Ativa,Médio,-0.14127038087013621,1,0.25,0.6891766542484319,Alto,16,0
+EMP_RJ_01249,Comércio varejista de combustíveis (postos),Inapta,Crítico,-0.009769684645828391,1,0.8333333333333334,0.6869940528338102,Alto,17,0
+EMP_RJ_00575,Fabricação de combustíveis,Inapta,Crítico,0.02812226133394574,1,1.0,0.6859388587996538,Alto,18,0
+EMP_RJ_01018,Comércio atacadista de combustíveis,Inapta,Crítico,0.0318724466356578,1,1.0,0.6808859000958397,Alto,19,0
+EMP_RJ_01019,Comércio varejista de combustíveis (postos),Inapta,Crítico,2.406239269081567e-05,1,0.8333333333333334,0.6737980650732465,Alto,20,0
+EMP_RJ_00127,Extração de petróleo e gás natural,Ativa,Alto,-0.05534858180699864,1,0.5833333333333334,0.6734065609079147,Alto,21,0
+EMP_RJ_01016,Comércio varejista de combustíveis (postos),Inapta,Crítico,0.0010229460230457565,1,0.8333333333333334,0.6724521801827598,Alto,22,0
+EMP_RJ_01352,Comércio varejista de combustíveis (postos),Ativa,Médio,-0.10947664548990088,1,0.3333333333333333,0.6713381225516173,Alto,23,0
+EMP_RJ_00988,Comércio varejista de combustíveis (postos),Ativa,Médio,-0.08732268860337777,1,0.4166666666666667,0.6664881230802384,Alto,24,0
+EMP_RJ_00714,Extração de petróleo e gás natural,Inapta,Crítico,0.005489317309632313,1,0.8333333333333334,0.6664342403074369,Alto,25,0
+EMP_RJ_00494,Comércio atacadista de combustíveis,Inapta,Crítico,0.006360439925321426,1,0.8333333333333334,0.6652604992122899,Alto,26,0
+EMP_RJ_00217,Extração de petróleo e gás natural,Ativa,Médio,-0.08419141549128151,1,0.4166666666666667,0.6622690798989421,Alto,27,0
+EMP_RJ_00634,Comércio varejista de combustíveis (postos),Inapta,Crítico,0.01179679323986249,1,0.8333333333333334,0.6579356161497976,Alto,28,0
+EMP_RJ_00330,Extração de petróleo e gás natural,Ativa,Alto,-0.042171930892505816,1,0.5833333333333334,0.6556524854239354,Alto,29,0
+EMP_RJ_01353,Comércio varejista de combustíveis (postos),Ativa,Médio,-0.09384421865704695,1,0.3333333333333333,0.6502751614252047,Alto,30,0
+EMP_RJ_01461,Comércio varejista de combustíveis (postos),Ativa,Médio,-0.09287561311522363,1,0.3333333333333333,0.6489700729004098,Alto,31,0
+EMP_RJ_01354,Comércio varejista de combustíveis (postos),Ativa,Médio,-0.09257805137748865,1,0.3333333333333333,0.648569141465922,Alto,32,0
+EMP_RJ_01382,Comércio varejista de combustíveis (postos),Ativa,Médio,-0.09223656953517745,1,0.3333333333333333,0.6481090325623666,Alto,33,0
+EMP_RJ_01434,Comércio varejista de combustíveis (postos),Ativa,Médio,-0.09159509728024084,1,0.3333333333333333,0.6472447198543099,Alto,34,0
+EMP_RJ_01266,Comércio varejista de combustíveis (postos),Ativa,Médio,-0.10863337865605394,1,0.25,0.6452019140325931,Alto,35,0
+EMP_RJ_01261,Comércio atacadista de combustíveis,Ativa,Baixo,-0.12659454793782277,1,0.16666666666666666,0.6444025972925798,Alto,36,0
+EMP_RJ_00989,Comércio varejista de combustíveis (postos),Ativa,Médio,-0.06876464996961562,1,0.4166666666666667,0.6414832245763231,Alto,37,0
+EMP_RJ_01359,Comércio varejista de combustíveis (postos),Ativa,Médio,-0.0860235898760423,1,0.3333333333333333,0.6397377316480053,Alto,38,0
+EMP_RJ_01184,Comércio varejista de combustíveis (postos),Inapta,Alto,0.007100772512791176,1,0.75,0.639262983172252,Alto,39,0
+EMP_RJ_01485,Comércio varejista de combustíveis (postos),Ativa,Médio,-0.06306085523819527,1,0.4166666666666667,0.633797993870592,Alto,40,0
+EMP_RJ_01486,Comércio varejista de combustíveis (postos),Ativa,Médio,-0.06306085523819527,1,0.4166666666666667,0.633797993870592,Alto,40,0
+EMP_RJ_00605,Comércio varejista de combustíveis (postos),Inapta,Alto,0.013364889006260261,1,0.75,0.6308227810459919,Alto,42,0
+EMP_RJ_01459,Comércio varejista de combustíveis (postos),Ativa,Médio,-0.07453834699400064,1,0.3333333333333333,0.6242626408678946,Alto,43,0
+EMP_RJ_01494,Extração de petróleo e gás natural,Ativa,Alto,-0.017568588856922807,1,0.5833333333333334,0.6225022111628589,Alto,44,0
+EMP_RJ_01491,Extração de petróleo e gás natural,Ativa,Alto,-0.01738933802892495,1,0.5833333333333334,0.6222606905555748,Alto,45,0
+EMP_RJ_01492,Extração de petróleo e gás natural,Ativa,Alto,-0.01738933802892495,1,0.5833333333333334,0.6222606905555748,Alto,45,0
+EMP_RJ_01493,Extração de petróleo e gás natural,Ativa,Alto,-0.01738933802892495,1,0.5833333333333334,0.6222606905555748,Alto,45,0
+EMP_RJ_00563,Extração de petróleo e gás natural,Ativa,Médio,-0.06804991705138774,1,0.3333333333333333,0.6155202012509388,Alto,48,0
+EMP_RJ_00160,Comércio varejista de combustíveis (postos),Inapta,Crítico,0.04493583241579652,1,0.8333333333333334,0.6132844368164392,Alto,49,0
+EMP_RJ_01355,Comércio atacadista de combustíveis,Inapta,Alto,-0.02919431388592375,1,0.5,0.6131665860529798,Alto,50,0
