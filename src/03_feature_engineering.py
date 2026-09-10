@@ -281,6 +281,85 @@ def preparar_modelagem(df: pd.DataFrame) -> pd.DataFrame:
 
 
 # ══════════════════════════════════════════════════════════
+# ETAPA ANP — Volume de vendas por município (2024)
+# ══════════════════════════════════════════════════════════
+
+def features_anp(df: pd.DataFrame) -> pd.DataFrame:
+    log.info("\nEtapa ANP — Cruzando com dados de vendas ANP 2024...")
+
+    RAW_DIR = Path("data/raw")
+    gasolina_path = RAW_DIR / "vendas-anuais-de-gasolina-c-por-municipio.csv"
+    diesel_path   = RAW_DIR / "vendas-anuais-de-oleo-diesel-por-municipio.csv"
+
+    if not gasolina_path.exists() or not diesel_path.exists():
+        log.warning("  ⚠ Arquivos ANP não encontrados — pulando etapa")
+        return df
+
+    # Carregar e filtrar RJ 2024
+    def carregar_anp(path):
+        d = pd.read_csv(
+            path, sep=";",
+            encoding="utf-8-sig",
+            dtype={"CÓDIGO IBGE": str},
+            lineterminator="\n",
+            low_memory=False,
+        )
+        d.columns = d.columns.str.strip()
+        d["VENDAS"] = pd.to_numeric(d["VENDAS"], errors="coerce").fillna(0)
+        d["ANO"] = pd.to_numeric(d["ANO"], errors="coerce")
+        return d[(d["ANO"] == 2024) & (d["UF"] == "RJ")].copy()
+
+    gasolina = carregar_anp(gasolina_path)
+    diesel   = carregar_anp(diesel_path)
+
+    # Agregar por município
+    gas_mun = (gasolina.groupby("MUNICÍPIO")["VENDAS"]
+               .sum().reset_index()
+               .rename(columns={"MUNICÍPIO": "municipio_anp", "VENDAS": "vol_gasolina_litros_2024"}))
+
+    die_mun = (diesel.groupby("MUNICÍPIO")["VENDAS"]
+               .sum().reset_index()
+               .rename(columns={"MUNICÍPIO": "municipio_anp", "VENDAS": "vol_diesel_litros_2024"}))
+
+    anp = gas_mun.merge(die_mun, on="municipio_anp", how="outer").fillna(0)
+    anp["vol_total_combustivel_2024"] = anp["vol_gasolina_litros_2024"] + anp["vol_diesel_litros_2024"]
+
+    log.info(f"  ✓ {len(anp):,} municípios do RJ com dados ANP 2024")
+
+    # Cruzar com dataset — via código do município
+    # O dataset tem 'municipio' como código numérico
+    # A ANP tem nome do município — vamos usar empresas_no_municipio como proxy
+    # e criar features de volume per capita de empresas
+
+    # Número de postos por município (do nosso dataset)
+    if "municipio" in df.columns:
+        postos_mun = (df[df["cnae_4dig"] == "4731"]
+                      .groupby("municipio").size()
+                      .reset_index(name="postos_no_municipio"))
+        df = df.merge(postos_mun, on="municipio", how="left")
+        df["postos_no_municipio"] = df["postos_no_municipio"].fillna(0).astype(int)
+
+        # Volume médio esperado por posto no município
+        # Usando volume total do RJ / total de postos como referência
+        vol_total_rj  = anp["vol_total_combustivel_2024"].sum()
+        postos_total  = df[df["cnae_4dig"] == "4731"]["municipio"].count()
+        vol_medio_rj  = vol_total_rj / postos_total if postos_total > 0 else 0
+
+        log.info(f"  ✓ Volume total RJ 2024: {vol_total_rj/1e9:.2f} bilhões de litros")
+        log.info(f"  ✓ Volume médio por posto RJ: {vol_medio_rj/1e6:.2f} milhões de litros")
+
+        # Feature: número de postos per capita de volume
+        # Municípios com muitos postos mas baixo volume são suspeitos
+        df["vol_medio_esperado_posto"] = vol_medio_rj
+        df["postos_acima_do_esperado"] = (
+            df["postos_no_municipio"] > (vol_total_rj / vol_medio_rj / len(anp))
+        ).astype(int)
+
+    log.info("  ✓ Features ANP adicionadas")
+    return df
+
+
+# ══════════════════════════════════════════════════════════
 # RELATÓRIO FINAL
 # ══════════════════════════════════════════════════════════
 
@@ -324,14 +403,12 @@ def main():
     df = features_financeiras(df)
     df = features_operacionais(df)
     df = features_temporais(df)
+    df = features_anp(df)
     df = score_risco_refinado(df)
     df = preparar_modelagem(df)
 
     # Relatório
     relatorio(df)
-
-    # Remover município do arquivo exportado — privacidade
-    df = df.drop(columns=["municipio"], errors="ignore")
 
     # Exportar
     df.to_parquet(OUTPUT, index=False)
