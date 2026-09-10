@@ -1,8 +1,9 @@
-# 🔍 Detecção de Uso Indevido de Créditos de ICMS via Análise de Notas Fiscais Eletrônicas
+# 🔍 Scoring de Risco de Fraude Fiscal — ICMS
 
-> **TCC — MBA em Data Science**  
-> Tema: Análise de Fraudes Fiscais  
-> Abordagem: Machine Learning + Análise de Grafos sobre dados públicos
+> **TCC — MBA em Data Science | USP ESALQ**  
+> Tema: Identificação de Uso Indevido de Créditos de ICMS via Análise de Dados Cadastrais  
+> Aluna: Kátia Rios Nóbrega de Mello  
+> Ano: 2026
 
 ---
 
@@ -10,31 +11,33 @@
 
 Este projeto desenvolve um modelo de detecção de padrões suspeitos de
 aproveitamento indevido de créditos de ICMS, utilizando dados públicos de
-CNPJs, notas fiscais eletrônicas (NF-e) e cadastros de empresas sancionadas.
+CNPJs, cadastros de empresas sancionadas (CEIS) e técnicas de Machine Learning
+supervisionado e não supervisionado.
 
 **Pergunta de pesquisa:**
 > *É possível identificar automaticamente contribuintes com comportamento
 > suspeito de aproveitamento indevido de crédito de ICMS a partir de
-> padrões nas transações de NF-e?*
+> padrões cadastrais e societários?*
 
 ---
 
 ## 🏗️ Estrutura do Projeto
 
 ```
-tcc_fraude_fiscal/
+tcc-scoring-risco-icms/
 │
 ├── data/
 │   ├── raw/                  # Dados brutos baixados (não versionados)
-│   └── processed/            # Datasets limpos e anonimizados
+│   ├── temp/                 # Checkpoints intermediários (não versionados)
+│   └── processed/            # Datasets limpos e anonimizados (não versionados)
 │
 ├── src/
-│   ├── 01_coleta.py          # Download e extração dos dados públicos
-│   ├── 02_preprocessamento.py # Limpeza e padronização
-│   ├── 03_feature_engineering.py # Criação de variáveis analíticas
-│   ├── 04_modelagem.py       # Treinamento dos modelos (IF, XGBoost, DBSCAN)
-│   ├── 05_avaliacao.py       # Métricas, curvas ROC, análise de resultados
-│   └── utils.py              # Funções auxiliares compartilhadas
+│   ├── 01_coleta.py          # ✅ Coleta e feature engineering — CNPJ nov/2025
+│   ├── 02_preprocessamento.py # 🔜 Cruzamento com CEIS e preparação para modelagem
+│   ├── 03_feature_engineering.py # 🔜 Features avançadas
+│   ├── 04_modelagem.py       # 🔜 Isolation Forest + XGBoost
+│   ├── 05_avaliacao.py       # 🔜 Métricas e visualizações
+│   └── utils.py              # Funções auxiliares
 │
 ├── notebooks/
 │   ├── 01_analise_exploratoria.ipynb
@@ -42,16 +45,16 @@ tcc_fraude_fiscal/
 │   └── 03_experimentos_modelos.ipynb
 │
 ├── outputs/
-│   ├── graficos/             # Visualizações exportadas
-│   ├── tabelas/              # Tabelas de resultados
-│   └── modelos/              # Modelos treinados serializados (.pkl)
+│   ├── graficos/
+│   ├── tabelas/
+│   └── modelos/
 │
 ├── docs/
-│   ├── referencias/          # Artigos e referências bibliográficas
-│   └── texto_tcc/            # Rascunhos e versões do texto
+│   ├── referencias/
+│   └── texto_tcc/
 │
 ├── venv/                     # Ambiente virtual (não versionado)
-├── requirements.txt          # Dependências do projeto
+├── requirements.txt
 ├── .gitignore
 └── README.md
 ```
@@ -60,13 +63,11 @@ tcc_fraude_fiscal/
 
 ## 🗂️ Fontes de Dados
 
-| Fonte | Conteúdo | URL |
+| Fonte | Conteúdo | Referência |
 |---|---|---|
-| Receita Federal | Cadastro CNPJ completo | dadosabertos.rfb.gov.br/CNPJ |
-| SEFAZ Nacional | Estatísticas NF-e | nfe.fazenda.gov.br |
-| Portal Transparência | Empresas sancionadas (CEIS/CNEP) | portaldatransparencia.gov.br |
+| Receita Federal | Cadastro CNPJ — nov/2025 | arquivos.receitafederal.gov.br |
+| Portal Transparência | Empresas sancionadas (CEIS) | portaldatransparencia.gov.br |
 | CONFAZ | Arrecadação ICMS por estado | fazenda.gov.br/confaz |
-| STN / SICONFI | Receitas orçamentárias | siconfi.tesouro.gov.br |
 
 > **Conformidade legal:** todos os dados utilizados são públicos e abertos.
 > Identificadores foram anonimizados em conformidade com a LGPD (Lei 13.709/2018)
@@ -74,86 +75,63 @@ tcc_fraude_fiscal/
 
 ---
 
+## 📊 Status do Dataset (nov/2025)
+
+| Indicador | Valor |
+|---|---|
+| Empresas analisadas | 5.060.707 |
+| Variáveis criadas | 21 |
+| Empresas novas (<1 ano) | 522.096 |
+| Empresas inaptas | 1.492.856 (29%) |
+| Empresas suspensas | 33.890 |
+| Sócio com múltiplas empresas | 348.535 |
+| Score de risco máximo | 9 |
+
+---
+
+## 🤖 Abordagem Metodológica
+
+### Não Supervisionado
+| Modelo | Aplicação |
+|---|---|
+| Isolation Forest | Detecção de anomalias cadastrais |
+| DBSCAN | Clustering de perfis suspeitos |
+
+### Supervisionado
+| Modelo | Aplicação |
+|---|---|
+| XGBoost | Score de risco com rótulos do CEIS |
+| Random Forest | Comparativo e interpretabilidade |
+
+---
+
 ## ⚙️ Como Executar
 
-### 1. Clonar e configurar o ambiente
-
 ```bash
-# Ativar o ambiente virtual (já existente)
-source venv/bin/activate        # Linux/Mac
-venv\Scripts\activate           # Windows
+# 1. Ativar ambiente virtual
+source venv/bin/activate
 
-# Instalar dependências
+# 2. Instalar dependências
 pip install -r requirements.txt
+
+# 3. Executar pipeline
+python3 src/01_coleta.py        # ✅ Concluído
+python3 src/02_preprocessamento.py
+python3 src/03_feature_engineering.py
+python3 src/04_modelagem.py
+python3 src/05_avaliacao.py
 ```
 
-### 2. Executar o pipeline completo
-
-```bash
-# Etapa 1 — Coleta de dados
-python src/01_coleta.py
-
-# Etapa 2 — Pré-processamento
-python src/02_preprocessamento.py
-
-# Etapa 3 — Feature Engineering
-python src/03_feature_engineering.py
-
-# Etapa 4 — Modelagem
-python src/04_modelagem.py
-
-# Etapa 5 — Avaliação
-python src/05_avaliacao.py
-```
-
-### 3. Exploração interativa
-
-```bash
-jupyter notebook notebooks/01_analise_exploratoria.ipynb
-```
-
----
-
-## 🤖 Modelos Utilizados
-
-| Modelo | Tipo | Aplicação |
-|---|---|---|
-| Isolation Forest | Não supervisionado | Detecção de anomalias cadastrais |
-| DBSCAN | Não supervisionado | Clustering de perfis suspeitos |
-| XGBoost | Supervisionado | Score de risco (com rótulos do CEIS) |
-| NetworkX (Grafos) | Análise de redes | Mapeamento de esquemas entre CNPJs |
-
----
-
-## 📊 Features Principais
-
-- Idade da empresa na data de análise
-- Capital social declarado
-- Quantidade e perfil de sócios (PF vs PJ)
-- Número de empresas por sócio (indicador de "laranja")
-- Número de filiais e UFs de atuação
-- Situação cadastral (ativa, inapta, suspensa)
-- Regime tributário (Simples, Lucro Presumido, Lucro Real)
-- Volume e concentração de NF-e emitidas
-- Razão crédito/débito de ICMS
-- Taxa de cancelamento de NF-e
+> **Nota:** O script `01_coleta.py` usa checkpoints — se interrompido,
+> retoma automaticamente de onde parou ao ser executado novamente.
 
 ---
 
 ## 📚 Referências Principais
 
-- Receita Federal do Brasil — Manual de Orientação do Contribuinte (NF-e)
+- Receita Federal do Brasil — Dados Abertos CNPJ
 - LGPD — Lei nº 13.709/2018
 - CTN — Código Tributário Nacional, Art. 198
-- Akoglu, L. et al. (2015). *Graph-based Anomaly Detection and Description*
-- Chandola, V. et al. (2009). *Anomaly Detection: A Survey*. ACM Computing Surveys
 - Liu, F. T. et al. (2008). *Isolation Forest*. IEEE ICDM
-
----
-
-## 👤 Autor
-
-**Kátia Rios Nóbrega de Mello**  
-MBA em Data Science & Analitcs — USP Esalq  
-Orientador: Francielly De Fátima Almeida  
-Ano: 2026
+- Chandola, V. et al. (2009). *Anomaly Detection: A Survey*. ACM Computing Surveys
+- Akoglu, L. et al. (2015). *Graph-based Anomaly Detection and Description*
