@@ -4,86 +4,19 @@
   Base de referência: novembro/2025
 ======================================================================
 
-1. ESCOPO DO ESTUDO
-   Universo analisado:      1,520 empresas
-   Estado:                  Rio de Janeiro (RJ)
-   Segmentos:               Extração, Refino, Atacado,
-                            Varejo e Transporte de Combustíveis
-   Fontes de dados:         Receita Federal (CNPJ Nov/2025),
-                            CEIS (Portal Transparência),
-                            ANP (Vendas por município 2024)
-   Variáveis construídas:   51
+  Empresas analisadas: 1,520
+  Variáveis: 51
 
-2. PERFIL DO SETOR
-   Ativa                     1,161 (76.4%)
-   Inapta                      350 (23.0%)
-   Suspensa                      9 (0.6%)
+  ISOLATION FOREST:
+  Anomalias: 152 (10.0%)
 
-   Por segmento:
-   Comércio varejista de combustíveis (postos)    1,182
-   Extração de petróleo e gás natural               162
-   Comércio atacadista de combustíveis              157
-   Transporte dutoviário de combustíveis              8
-   Fabricação de combustíveis                         7
-   Fabricação de produtos do refino de petróleo       4
+  DBSCAN:
+  Outliers: 250 (16.4%)
+  Silhouette: 0.3705
 
-3. RESULTADOS — ISOLATION FOREST
-   Configuração:  200 árvores, contamination=10%
-   Anomalias:     152 empresas (10.0%)
-   Inaptas anômalas: 7
-   Ativas anômalas:  143 ⚠ (alto risco)
-
-4. RESULTADOS — DBSCAN
-   Configuração:  eps=1.5, min_samples=5, PCA=10 componentes
-   Clusters:      34
-   Outliers:      250 (16.4%)
-   Silhouette:    0.3705
-
-5. SCORE COMBINADO
-   Ponderação: IF (50%) + Score Manual (30%) + DBSCAN (20%)
-   Baixo                 1,076 (70.8%)
-   Médio                   294 (19.3%)
-   Alto                    142 (9.3%)
-   Crítico                   8 (0.5%)
-
-6. TOP 10 EMPRESAS MAIS SUSPEITAS
- ranking   id_empresa                              cnae_descricao situacao_desc  score_final classe_final
-       1 EMP_RJ_01317 Comércio varejista de combustíveis (postos)         Ativa     0.750000      Crítico
-       2 EMP_RJ_01471         Comércio atacadista de combustíveis        Inapta     0.746055      Crítico
-       3 EMP_RJ_00781 Comércio varejista de combustíveis (postos)        Inapta     0.719698      Crítico
-       4 EMP_RJ_00985 Comércio varejista de combustíveis (postos)        Inapta     0.712673      Crítico
-       5 EMP_RJ_00675          Extração de petróleo e gás natural         Ativa     0.704911      Crítico
-       6 EMP_RJ_01360          Extração de petróleo e gás natural         Ativa     0.703703      Crítico
-       7 EMP_RJ_00439         Comércio atacadista de combustíveis        Inapta     0.701203      Crítico
-       8 EMP_RJ_01499 Comércio varejista de combustíveis (postos)         Ativa     0.700826      Crítico
-       9 EMP_RJ_00164 Comércio varejista de combustíveis (postos)        Inapta     0.699327         Alto
-      10 EMP_RJ_00028 Comércio varejista de combustíveis (postos)        Inapta     0.698496         Alto
-
-7. PRINCIPAIS ACHADOS
-   a) 86% das empresas do setor têm capital social < R$10.000,
-      valor incompatível com os requisitos operacionais do setor.
-   b) 23% das empresas estão inaptas — taxa elevada para
-      um setor altamente regulado pela ANP.
-   c) Empresas ativas figuram entre as mais suspeitas,
-      indicando anomalia operacional mesmo sem irregularidade
-      cadastral formal.
-   d) O IF e o Score Manual apresentaram baixa concordância
-      (2.6%), sugerindo que capturam dimensões distintas
-      de anomalia — ambos são necessários.
-   e) DBSCAN identificou 34 padrões distintos de comportamento,
-      revelando heterogeneidade no setor.
-
-8. LIMITAÇÕES
-   - Dados de ICMS por empresa não disponíveis publicamente
-     (sigilo fiscal — CTN Art. 198)
-   - CEIS com apenas 1 empresa sancionada no escopo,
-     impossibilitando modelagem supervisionada
-   - Dados ANP referem-se a 2024 (defasagem de 1 ano)
-
-9. TRABALHOS FUTUROS
-   - Aplicar XGBoost com dados rotulados de autuações fiscais
-   - Expandir para outros estados produtores (ES, SP)
-   - Incorporar dados de NF-e para análise de redes
-   - Desenvolver dashboard de monitoramento contínuo
-
+  SCORE COMBINADO:
+  Baixo: 1,076 (70.8%)
+  Médio: 294 (19.3%)
+  Alto: 142 (9.3%)
+  Crítico: 8 (0.5%)
 ======================================================================

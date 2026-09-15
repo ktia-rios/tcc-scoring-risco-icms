@@ -1,5 +1,5 @@
-﻿classe_final,qtd,score_medio,if_score_medio,pct_inaptas,pct_dbscan_outlier
-Baixo,1076,0.161,0.112,16.357,0.0
-Médio,294,0.387,0.042,45.918,0.344
-Alto,142,0.585,-0.024,24.648,0.993
-Crítico,8,0.717,-0.065,50.0,1.0
+﻿classe_final,qtd,score_medio,if_score_medio,pct_inaptas
+Baixo,1076,0.161,0.112,16.357
+Médio,294,0.387,0.042,45.918
+Alto,142,0.585,-0.024,24.648
+Crítico,8,0.717,-0.065,50.0

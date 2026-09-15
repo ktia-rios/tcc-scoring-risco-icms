@@ -1,0 +1,151 @@
+﻿id_empresa,situacao_desc,cnae_descricao,score_final,classe_final,ranking,if_anomalia,dbscan_outlier,score_manual_norm,padrao,anos_operacao,qtd_socios,qtd_filiais,sem_socios,max_empresas_por_socio,taxa_inapta_municipio
+EMP_RJ_01317,Ativa,Comércio varejista de combustíveis (postos),0.75,Crítico,1,1,1,0.16666666666666666,P1: Capital incompatível,0.8,0,7,1,1.0,0.20689655172413793
+EMP_RJ_01471,Inapta,Comércio atacadista de combustíveis,0.7460547360337684,Crítico,2,1,1,0.6666666666666666,P2: Empresa fantasma,22.6,0,2,1,1.0,0.2
+EMP_RJ_00781,Inapta,Comércio varejista de combustíveis (postos),0.7196978669466998,Crítico,3,0,1,1.0,P3: Laranja societário,43.3,2,0,0,11.0,0.25
+EMP_RJ_00985,Inapta,Comércio varejista de combustíveis (postos),0.7126729677239441,Crítico,4,1,1,0.8333333333333334,P2: Empresa fantasma,32.1,0,1,1,1.0,0.5
+EMP_RJ_00675,Ativa,Extração de petróleo e gás natural,0.7049109467726629,Crítico,5,1,1,0.5833333333333334,P5: Ativa suspeita,0.1,0,10,1,1.0,0.21731448763250882
+EMP_RJ_01360,Ativa,Extração de petróleo e gás natural,0.703702613399404,Crítico,6,1,1,0.6666666666666666,P3: Laranja societário,2.7,4,0,0,18.0,0.21731448763250882
+EMP_RJ_00439,Inapta,Comércio atacadista de combustíveis,0.7012033886384734,Crítico,7,0,1,1.0,P2: Empresa fantasma,18.1,0,0,1,1.0,0.25
+EMP_RJ_01499,Ativa,Comércio varejista de combustíveis (postos),0.7008255814677302,Crítico,8,1,1,0.5833333333333334,P3: Laranja societário,0.1,3,0,0,22.0,0.21731448763250882
+EMP_RJ_00164,Inapta,Comércio varejista de combustíveis (postos),0.6993268822140781,Alto,9,0,1,1.0,P3: Laranja societário,25.7,2,0,0,11.0,0.20212765957446807
+EMP_RJ_00028,Inapta,Comércio varejista de combustíveis (postos),0.6984963231741406,Alto,10,0,1,1.0,P3: Laranja societário,29.9,2,0,0,11.0,0.25
+EMP_RJ_01413,Ativa,Extração de petróleo e gás natural,0.6945882801766232,Alto,11,1,1,0.6666666666666666,P3: Laranja societário,1.6,4,0,0,16.0,0.21731448763250882
+EMP_RJ_01414,Ativa,Extração de petróleo e gás natural,0.6945882801766232,Alto,11,1,1,0.6666666666666666,P3: Laranja societário,1.6,4,0,0,16.0,0.21731448763250882
+EMP_RJ_00298,Inapta,Comércio varejista de combustíveis (postos),0.6923643900880911,Alto,13,0,1,1.0,P3: Laranja societário,22.4,2,0,0,11.0,0.23809523809523808
+EMP_RJ_00199,Inapta,Comércio varejista de combustíveis (postos),0.6921390679954135,Alto,14,0,1,1.0,P3: Laranja societário,24.8,2,0,0,11.0,0.21731448763250882
+EMP_RJ_00122,Suspensa,Comércio varejista de combustíveis (postos),0.6904427576080088,Alto,15,1,1,0.6666666666666666,P3: Laranja societário,15.5,2,4,0,11.0,0.20212765957446807
+EMP_RJ_01369,Ativa,Comércio varejista de combustíveis (postos),0.6891766542484319,Alto,16,1,1,0.25,Outros,2.6,14,0,0,4.0,0.25
+EMP_RJ_01249,Inapta,Comércio varejista de combustíveis (postos),0.6869940528338102,Alto,17,1,1,0.8333333333333334,P4: Abandono fiscal,33.7,5,0,0,8.0,0.21731448763250882
+EMP_RJ_00575,Inapta,Fabricação de combustíveis,0.6859388587996538,Alto,18,0,1,1.0,P2: Empresa fantasma,15.3,0,0,1,1.0,0.21731448763250882
+EMP_RJ_01018,Inapta,Comércio atacadista de combustíveis,0.6808859000958397,Alto,19,0,1,1.0,P2: Empresa fantasma,7.1,0,0,1,1.0,0.13333333333333333
+EMP_RJ_01019,Inapta,Comércio varejista de combustíveis (postos),0.6737980650732465,Alto,20,0,1,0.8333333333333334,P2: Empresa fantasma,33.0,0,1,1,1.0,0.21731448763250882
+EMP_RJ_00127,Ativa,Extração de petróleo e gás natural,0.6734065609079147,Alto,21,1,1,0.5833333333333334,P5: Ativa suspeita,0.2,0,3,1,1.0,0.13333333333333333
+EMP_RJ_01016,Inapta,Comércio varejista de combustíveis (postos),0.6724521801827598,Alto,22,0,1,0.8333333333333334,P2: Empresa fantasma,49.1,0,1,1,1.0,0.1724137931034483
+EMP_RJ_01352,Ativa,Comércio varejista de combustíveis (postos),0.6713381225516173,Alto,23,1,1,0.3333333333333333,P3: Laranja societário,2.9,4,0,0,11.0,0.21731448763250882
+EMP_RJ_00988,Ativa,Comércio varejista de combustíveis (postos),0.6664881230802384,Alto,24,1,1,0.4166666666666667,Outros,59.2,18,0,0,4.0,0.25
+EMP_RJ_00714,Inapta,Extração de petróleo e gás natural,0.6664342403074369,Alto,25,0,1,0.8333333333333334,P4: Abandono fiscal,10.9,6,0,0,1.0,0.21731448763250882
+EMP_RJ_00494,Inapta,Comércio atacadista de combustíveis,0.6652604992122899,Alto,26,0,1,0.8333333333333334,P2: Empresa fantasma,16.0,0,1,1,1.0,0.21731448763250882
+EMP_RJ_00217,Ativa,Extração de petróleo e gás natural,0.6622690798989421,Alto,27,1,1,0.4166666666666667,Outros,0.4,9,7,0,1.0,0.13333333333333333
+EMP_RJ_00634,Inapta,Comércio varejista de combustíveis (postos),0.6579356161497976,Alto,28,0,1,0.8333333333333334,P2: Empresa fantasma,13.6,0,0,1,1.0,1.0
+EMP_RJ_00330,Ativa,Extração de petróleo e gás natural,0.6556524854239354,Alto,29,1,1,0.5833333333333334,P5: Ativa suspeita,0.2,0,2,1,1.0,0.13333333333333333
+EMP_RJ_01353,Ativa,Comércio varejista de combustíveis (postos),0.6502751614252047,Alto,30,1,1,0.3333333333333333,P3: Laranja societário,2.9,4,0,0,11.0,0.20212765957446807
+EMP_RJ_01461,Ativa,Comércio varejista de combustíveis (postos),0.6489700729004098,Alto,31,1,1,0.3333333333333333,P3: Laranja societário,0.8,3,0,0,22.0,0.2
+EMP_RJ_01354,Ativa,Comércio varejista de combustíveis (postos),0.648569141465922,Alto,32,1,1,0.3333333333333333,P3: Laranja societário,2.9,4,0,0,11.0,0.2222222222222222
+EMP_RJ_01382,Ativa,Comércio varejista de combustíveis (postos),0.6481090325623666,Alto,33,1,1,0.3333333333333333,P3: Laranja societário,2.3,2,0,0,16.0,0.21731448763250882
+EMP_RJ_01434,Ativa,Comércio varejista de combustíveis (postos),0.6472447198543099,Alto,34,1,1,0.3333333333333333,P3: Laranja societário,1.3,4,0,0,22.0,0.1111111111111111
+EMP_RJ_01266,Ativa,Comércio varejista de combustíveis (postos),0.6452019140325931,Alto,35,1,1,0.25,Outros,53.4,4,0,0,3.0,0.21731448763250882
+EMP_RJ_01261,Ativa,Comércio atacadista de combustíveis,0.6444025972925798,Alto,36,1,1,0.16666666666666666,P5: Ativa suspeita,2.8,0,1,1,1.0,0.20212765957446807
+EMP_RJ_00989,Ativa,Comércio varejista de combustíveis (postos),0.6414832245763231,Alto,37,1,1,0.4166666666666667,Outros,58.6,18,0,0,4.0,0.25
+EMP_RJ_01359,Ativa,Comércio varejista de combustíveis (postos),0.6397377316480053,Alto,38,1,1,0.3333333333333333,P3: Laranja societário,2.8,2,0,0,16.0,0.21731448763250882
+EMP_RJ_01184,Inapta,Comércio varejista de combustíveis (postos),0.639262983172252,Alto,39,0,1,0.75,P4: Abandono fiscal,33.7,3,1,0,3.0,0.25
+EMP_RJ_01485,Ativa,Comércio varejista de combustíveis (postos),0.633797993870592,Alto,40,1,1,0.4166666666666667,Outros,0.2,2,0,0,6.0,0.21731448763250882
+EMP_RJ_01486,Ativa,Comércio varejista de combustíveis (postos),0.633797993870592,Alto,40,1,1,0.4166666666666667,Outros,0.2,2,0,0,6.0,0.21731448763250882
+EMP_RJ_00605,Inapta,Comércio varejista de combustíveis (postos),0.6308227810459919,Alto,42,0,1,0.75,P4: Abandono fiscal,14.5,2,0,0,4.0,0.5
+EMP_RJ_01459,Ativa,Comércio varejista de combustíveis (postos),0.6242626408678946,Alto,43,1,1,0.3333333333333333,P3: Laranja societário,0.8,2,0,0,16.0,0.20212765957446807
+EMP_RJ_01494,Ativa,Extração de petróleo e gás natural,0.6225022111628589,Alto,44,1,1,0.5833333333333334,Outros,0.1,3,0,0,6.0,0.21731448763250882
+EMP_RJ_01491,Ativa,Extração de petróleo e gás natural,0.6222606905555748,Alto,45,1,1,0.5833333333333334,Outros,0.1,3,0,0,6.0,0.21731448763250882
+EMP_RJ_01492,Ativa,Extração de petróleo e gás natural,0.6222606905555748,Alto,45,1,1,0.5833333333333334,Outros,0.1,3,0,0,6.0,0.21731448763250882
+EMP_RJ_01493,Ativa,Extração de petróleo e gás natural,0.6222606905555748,Alto,45,1,1,0.5833333333333334,Outros,0.1,3,0,0,6.0,0.21731448763250882
+EMP_RJ_00563,Ativa,Extração de petróleo e gás natural,0.6155202012509388,Alto,48,1,1,0.3333333333333333,P5: Ativa suspeita,0.7,0,4,1,1.0,0.13333333333333333
+EMP_RJ_00160,Inapta,Comércio varejista de combustíveis (postos),0.6132844368164392,Alto,49,0,1,0.8333333333333334,P4: Abandono fiscal,25.7,2,0,0,6.0,0.24528301886792453
+EMP_RJ_01355,Inapta,Comércio atacadista de combustíveis,0.6131665860529798,Alto,50,1,1,0.5,Outros,2.9,1,0,0,1.0,0.2222222222222222
+EMP_RJ_00452,Inapta,Comércio varejista de combustíveis (postos),0.6129711465725209,Alto,51,0,1,0.8333333333333334,P4: Abandono fiscal,17.9,2,0,0,6.0,0.20689655172413793
+EMP_RJ_01397,Ativa,Comércio varejista de combustíveis (postos),0.6112684302505198,Alto,52,1,1,0.3333333333333333,P3: Laranja societário,1.8,3,0,0,22.0,0.21731448763250882
+EMP_RJ_01373,Ativa,Comércio varejista de combustíveis (postos),0.6108248105876959,Alto,53,1,1,0.3333333333333333,P3: Laranja societário,2.5,3,0,0,22.0,0.30357142857142855
+EMP_RJ_01387,Ativa,Comércio varejista de combustíveis (postos),0.6100752349938505,Alto,54,1,1,0.3333333333333333,P3: Laranja societário,2.3,3,0,0,22.0,0.30357142857142855
+EMP_RJ_01388,Ativa,Comércio varejista de combustíveis (postos),0.6089485803539283,Alto,55,1,1,0.3333333333333333,P3: Laranja societário,2.3,2,0,0,16.0,0.21731448763250882
+EMP_RJ_01314,Ativa,Comércio atacadista de combustíveis,0.6059808622882805,Alto,56,1,1,0.0,P1: Capital incompatível,1.7,3,1,0,1.0,0.2
+EMP_RJ_01364,Ativa,Comércio varejista de combustíveis (postos),0.6053827775928977,Alto,57,1,1,0.3333333333333333,P3: Laranja societário,2.6,2,0,0,16.0,0.30357142857142855
+EMP_RJ_01441,Ativa,Comércio varejista de combustíveis (postos),0.6047878974466303,Alto,58,1,1,0.3333333333333333,P3: Laranja societário,1.2,2,0,0,16.0,0.30357142857142855
+EMP_RJ_00421,Ativa,Extração de petróleo e gás natural,0.6045561372878832,Alto,59,1,1,0.3333333333333333,P5: Ativa suspeita,1.8,0,5,1,1.0,0.21731448763250882
+EMP_RJ_01401,Ativa,Comércio varejista de combustíveis (postos),0.6035229407464762,Alto,60,1,1,0.3333333333333333,P3: Laranja societário,1.7,2,0,0,16.0,0.30357142857142855
+EMP_RJ_01054,Ativa,Extração de petróleo e gás natural,0.6030770496129545,Alto,61,1,1,0.3333333333333333,P5: Ativa suspeita,1.0,0,54,1,1.0,0.1724137931034483
+EMP_RJ_01021,Inapta,Comércio varejista de combustíveis (postos),0.6023973567894374,Alto,62,0,1,0.75,Outros,7.1,3,0,0,4.0,0.35
+EMP_RJ_01376,Ativa,Comércio varejista de combustíveis (postos),0.5996930645726115,Alto,63,1,1,0.3333333333333333,P3: Laranja societário,2.4,1,0,0,17.0,0.25
+EMP_RJ_01478,Ativa,Comércio varejista de combustíveis (postos),0.5992128525607003,Alto,64,1,1,0.3333333333333333,Outros,0.3,5,0,0,3.0,0.3246753246753247
+EMP_RJ_01475,Ativa,Comércio varejista de combustíveis (postos),0.5990673526505352,Alto,65,1,1,0.3333333333333333,Outros,0.4,3,0,0,4.0,0.07692307692307693
+EMP_RJ_01438,Ativa,Comércio atacadista de combustíveis,0.5968377570330715,Alto,66,1,1,0.3333333333333333,P3: Laranja societário,1.3,1,0,0,17.0,0.20212765957446807
+EMP_RJ_01109,Inapta,Comércio varejista de combustíveis (postos),0.5953608382011559,Alto,67,0,1,0.6666666666666666,P4: Abandono fiscal,57.3,1,1,0,1.0,0.21731448763250882
+EMP_RJ_01348,Ativa,Comércio varejista de combustíveis (postos),0.5953488779721565,Alto,68,1,1,0.3333333333333333,P3: Laranja societário,3.1,3,0,0,22.0,0.5
+EMP_RJ_01455,Ativa,Comércio varejista de combustíveis (postos),0.5945157774060706,Alto,69,1,1,0.16666666666666666,Outros,0.9,2,0,0,6.0,0.3246753246753247
+EMP_RJ_01274,Ativa,Comércio varejista de combustíveis (postos),0.5944757831701438,Alto,70,1,1,0.3333333333333333,P3: Laranja societário,53.6,3,0,0,17.0,0.21731448763250882
+EMP_RJ_01517,Inapta,Comércio atacadista de combustíveis,0.5930103054456182,Alto,71,1,1,0.5,P4: Abandono fiscal,31.9,1,0,0,1.0,1.0
+EMP_RJ_01445,Ativa,Comércio varejista de combustíveis (postos),0.5925174352630409,Alto,72,1,1,0.3333333333333333,P3: Laranja societário,1.2,2,0,0,16.0,0.21731448763250882
+EMP_RJ_00860,Ativa,Extração de petróleo e gás natural,0.5872367576745232,Alto,73,1,1,0.5,Outros,8.0,5,0,0,6.0,0.21731448763250882
+EMP_RJ_00488,Ativa,Extração de petróleo e gás natural,0.5838578148858443,Alto,74,1,1,0.3333333333333333,P5: Ativa suspeita,1.5,0,9,1,1.0,0.1724137931034483
+EMP_RJ_00982,Inapta,Comércio varejista de combustíveis (postos),0.5807662685049142,Alto,75,0,1,0.6666666666666666,P4: Abandono fiscal,16.8,2,1,0,1.0,0.45454545454545453
+EMP_RJ_01056,Ativa,Comércio varejista de combustíveis (postos),0.5784123065983731,Alto,76,1,1,0.5,P3: Laranja societário,59.4,4,0,0,22.0,0.21731448763250882
+EMP_RJ_01385,Ativa,Comércio varejista de combustíveis (postos),0.5780812593496184,Alto,77,1,1,0.3333333333333333,P3: Laranja societário,2.3,1,0,0,17.0,0.20212765957446807
+EMP_RJ_01498,Ativa,Comércio varejista de combustíveis (postos),0.5757465560458042,Alto,78,1,1,0.3333333333333333,Outros,0.1,1,0,0,3.0,0.21731448763250882
+EMP_RJ_01257,Ativa,Comércio atacadista de combustíveis,0.5749602219118818,Alto,79,1,1,0.16666666666666666,P5: Ativa suspeita,4.0,0,1,1,1.0,0.1724137931034483
+EMP_RJ_00610,Inapta,Comércio atacadista de combustíveis,0.5736652112185493,Alto,80,0,1,0.8333333333333334,P4: Abandono fiscal,14.3,2,0,0,1.0,0.25
+EMP_RJ_00082,Ativa,Extração de petróleo e gás natural,0.5732417411975692,Alto,81,1,1,0.16666666666666666,Outros,0.8,13,8,0,1.0,0.21731448763250882
+EMP_RJ_00246,Ativa,Comércio atacadista de combustíveis,0.57262830897632,Alto,82,1,1,0.3333333333333333,P5: Ativa suspeita,2.3,0,2,1,1.0,0.21731448763250882
+EMP_RJ_00966,Ativa,Comércio varejista de combustíveis (postos),0.5725925066879982,Alto,83,0,1,0.5,P3: Laranja societário,59.2,2,0,0,17.0,0.25
+EMP_RJ_01281,Ativa,Comércio varejista de combustíveis (postos),0.5719552146747393,Alto,84,1,1,0.3333333333333333,P3: Laranja societário,51.9,2,0,0,17.0,0.21731448763250882
+EMP_RJ_01309,Inapta,Comércio varejista de combustíveis (postos),0.5700154939820081,Alto,85,0,1,0.5,P2: Empresa fantasma,3.9,0,0,1,1.0,0.30357142857142855
+EMP_RJ_01488,Ativa,Comércio varejista de combustíveis (postos),0.5696289476226379,Alto,86,1,1,0.25,P1: Capital incompatível,0.1,3,0,0,1.0,0.21731448763250882
+EMP_RJ_01060,Ativa,Comércio varejista de combustíveis (postos),0.5687167349698146,Alto,87,1,1,0.4166666666666667,Outros,59.3,6,0,0,3.0,0.21731448763250882
+EMP_RJ_00938,Ativa,Extração de petróleo e gás natural,0.568100723368631,Alto,88,1,1,0.3333333333333333,P5: Ativa suspeita,1.0,0,3,1,1.0,0.30357142857142855
+EMP_RJ_00991,Ativa,Extração de petróleo e gás natural,0.5678821729089545,Alto,89,0,1,0.5,Outros,7.2,4,0,0,6.0,0.21731448763250882
+EMP_RJ_00636,Ativa,Extração de petróleo e gás natural,0.5665173761514353,Alto,90,1,1,0.3333333333333333,P5: Ativa suspeita,1.0,0,1,1,1.0,0.21731448763250882
+EMP_RJ_01487,Ativa,Extração de petróleo e gás natural,0.5631864626873269,Alto,91,0,1,0.5,Outros,0.1,3,0,0,4.0,0.21731448763250882
+EMP_RJ_01489,Ativa,Extração de petróleo e gás natural,0.5631864626873269,Alto,91,0,1,0.5,Outros,0.1,3,0,0,4.0,0.21731448763250882
+EMP_RJ_01490,Ativa,Extração de petróleo e gás natural,0.5631864626873269,Alto,91,0,1,0.5,Outros,0.1,3,0,0,4.0,0.21731448763250882
+EMP_RJ_01322,Ativa,Comércio atacadista de combustíveis,0.5627776940091265,Alto,94,1,1,0.0,P1: Capital incompatível,1.1,2,1,0,1.0,0.21731448763250882
+EMP_RJ_01514,Inapta,Comércio atacadista de combustíveis,0.5594168218581006,Alto,95,0,1,0.5,P4: Abandono fiscal,32.2,1,0,0,1.0,0.21731448763250882
+EMP_RJ_01286,Ativa,Comércio varejista de combustíveis (postos),0.555051618135907,Alto,96,1,1,0.16666666666666666,P5: Ativa suspeita,46.3,0,1,1,1.0,0.21731448763250882
+EMP_RJ_01272,Inapta,Comércio varejista de combustíveis (postos),0.5541831595743212,Alto,97,0,1,0.5,P4: Abandono fiscal,53.6,1,0,0,1.0,0.21731448763250882
+EMP_RJ_01367,Ativa,Extração de petróleo e gás natural,0.553694715868035,Alto,98,1,1,0.0,Outros,2.6,2,0,0,1.0,0.21731448763250882
+EMP_RJ_00820,Ativa,Comércio varejista de combustíveis (postos),0.5528863164055893,Alto,99,0,1,0.5,P3: Laranja societário,52.5,4,0,0,22.0,0.20689655172413793
+EMP_RJ_00512,Inapta,Comércio atacadista de combustíveis,0.5518761972153927,Alto,100,0,1,0.8333333333333334,P4: Abandono fiscal,16.4,2,0,0,1.0,0.20212765957446807
+EMP_RJ_00375,Inapta,Comércio atacadista de combustíveis,0.5504596532224209,Alto,101,0,1,0.8333333333333334,P4: Abandono fiscal,20.1,2,0,0,1.0,0.20212765957446807
+EMP_RJ_01346,Ativa,Comércio varejista de combustíveis (postos),0.5480027036927096,Alto,102,1,1,0.3333333333333333,P3: Laranja societário,3.1,2,0,0,16.0,0.30357142857142855
+EMP_RJ_01270,Inapta,Comércio varejista de combustíveis (postos),0.5475150422784429,Alto,103,0,1,0.5,P4: Abandono fiscal,52.3,2,0,0,1.0,0.21731448763250882
+EMP_RJ_00662,Ativa,Comércio atacadista de combustíveis,0.5474634517338127,Alto,104,1,1,0.3333333333333333,P5: Ativa suspeita,1.0,0,1,1,1.0,0.20212765957446807
+EMP_RJ_00210,Ativa,Comércio atacadista de combustíveis,0.5444175019255465,Alto,105,1,1,0.3333333333333333,P5: Ativa suspeita,2.0,0,1,1,1.0,0.21731448763250882
+EMP_RJ_00190,Suspensa,Comércio varejista de combustíveis (postos),0.5424479892837104,Alto,106,0,1,0.5,Outros,22.0,0,1,1,1.0,0.23809523809523808
+EMP_RJ_01206,Ativa,Comércio varejista de combustíveis (postos),0.5392671328530113,Alto,107,0,1,0.4166666666666667,Outros,34.1,4,0,0,3.0,0.2
+EMP_RJ_01436,Ativa,Comércio varejista de combustíveis (postos),0.539165130080102,Alto,108,1,1,0.16666666666666666,Outros,1.3,4,0,0,6.0,0.21731448763250882
+EMP_RJ_01394,Ativa,Comércio varejista de combustíveis (postos),0.5383220219186682,Alto,109,1,1,0.16666666666666666,Outros,1.9,2,0,0,6.0,0.20689655172413793
+EMP_RJ_01103,Ativa,Comércio varejista de combustíveis (postos),0.5380146410391606,Alto,110,0,1,0.5,P3: Laranja societário,58.6,3,0,0,17.0,0.21731448763250882
+EMP_RJ_00835,Ativa,Comércio varejista de combustíveis (postos),0.5357065362178748,Alto,111,0,1,0.5,P3: Laranja societário,44.6,1,0,0,11.0,0.5
+EMP_RJ_01013,Inapta,Comércio varejista de combustíveis (postos),0.5351299793411184,Alto,112,0,1,0.6666666666666666,P4: Abandono fiscal,29.1,2,1,0,1.0,0.35
+EMP_RJ_01509,Inapta,Comércio varejista de combustíveis (postos),0.5339046959652545,Alto,113,0,1,0.5,P4: Abandono fiscal,32.7,2,0,0,1.0,0.21731448763250882
+EMP_RJ_00177,Ativa,Extração de petróleo e gás natural,0.532709614856125,Alto,114,1,1,0.3333333333333333,P5: Ativa suspeita,3.3,0,4,1,1.0,0.21731448763250882
+EMP_RJ_01325,Ativa,Comércio varejista de combustíveis (postos),0.532192588013412,Alto,115,1,1,0.3333333333333333,P3: Laranja societário,3.6,2,0,0,17.0,0.2222222222222222
+EMP_RJ_00107,Ativa,Extração de petróleo e gás natural,0.5319503804233915,Alto,116,1,1,0.3333333333333333,P5: Ativa suspeita,2.5,0,1,1,1.0,0.20212765957446807
+EMP_RJ_00026,Inapta,Comércio varejista de combustíveis (postos),0.5316493008835697,Alto,117,0,1,0.6666666666666666,P4: Abandono fiscal,29.9,2,0,0,1.0,0.3333333333333333
+EMP_RJ_01464,Ativa,Comércio varejista de combustíveis (postos),0.5289536712218081,Alto,118,1,1,0.08333333333333333,Outros,0.7,1,0,0,4.0,0.21731448763250882
+EMP_RJ_00053,Ativa,Comércio varejista de combustíveis (postos),0.5287489105223622,Alto,119,0,1,0.4166666666666667,Outros,28.8,4,0,0,3.0,0.2
+EMP_RJ_01361,Ativa,Comércio varejista de combustíveis (postos),0.5282773055185837,Alto,120,1,1,0.16666666666666666,Outros,2.7,3,0,0,6.0,0.21731448763250882
+EMP_RJ_01279,Ativa,Comércio varejista de combustíveis (postos),0.5282548435199874,Alto,121,1,1,0.08333333333333333,Outros,51.6,2,0,0,4.0,0.21731448763250882
+EMP_RJ_01073,Ativa,Comércio varejista de combustíveis (postos),0.5281438476317237,Alto,122,0,1,0.5,P3: Laranja societário,59.3,2,0,0,16.0,0.21731448763250882
+EMP_RJ_01496,Ativa,Comércio varejista de combustíveis (postos),0.52728200931384,Alto,123,1,1,0.25,Outros,0.1,1,0,0,2.0,0.2
+EMP_RJ_01231,Inapta,Comércio atacadista de combustíveis,0.5269533932954222,Alto,124,0,1,0.6666666666666666,P4: Abandono fiscal,25.7,2,1,0,1.0,0.2
+EMP_RJ_01335,Ativa,Comércio varejista de combustíveis (postos),0.5256044675376819,Alto,125,1,1,0.3333333333333333,P3: Laranja societário,3.3,1,0,0,17.0,0.20212765957446807
+EMP_RJ_01451,Ativa,Extração de petróleo e gás natural,0.5252624910594506,Alto,126,1,1,0.3333333333333333,Outros,1.0,3,0,0,6.0,0.21731448763250882
+EMP_RJ_01452,Ativa,Extração de petróleo e gás natural,0.5252624910594506,Alto,126,1,1,0.3333333333333333,Outros,1.0,3,0,0,6.0,0.21731448763250882
+EMP_RJ_00790,Ativa,Comércio varejista de combustíveis (postos),0.5249860527268198,Alto,128,1,1,0.3333333333333333,P5: Ativa suspeita,43.6,0,1,1,1.0,0.5
+EMP_RJ_01371,Ativa,Comércio atacadista de combustíveis,0.5228975114936077,Alto,129,1,1,0.16666666666666666,Outros,2.5,1,0,0,1.0,0.0
+EMP_RJ_00417,Ativa,Comércio varejista de combustíveis (postos),0.5227263039239198,Alto,130,0,1,0.5,P3: Laranja societário,18.6,4,0,0,22.0,0.21731448763250882
+EMP_RJ_00116,Inapta,Comércio varejista de combustíveis (postos),0.5226558004967323,Alto,131,0,1,0.6666666666666666,P4: Abandono fiscal,26.7,6,0,0,1.0,0.21731448763250882
+EMP_RJ_01339,Ativa,Comércio varejista de combustíveis (postos),0.5225003611102965,Alto,132,1,1,0.16666666666666666,Outros,3.2,2,0,0,6.0,0.5
+EMP_RJ_01422,Ativa,Comércio varejista de combustíveis (postos),0.5214069743069378,Alto,133,1,1,0.16666666666666666,Outros,1.6,1,0,0,8.0,0.21731448763250882
+EMP_RJ_00943,Ativa,Comércio varejista de combustíveis (postos),0.5212592072584629,Alto,134,0,1,0.3333333333333333,Outros,48.4,0,2,1,1.0,0.21731448763250882
+EMP_RJ_01357,Ativa,Comércio varejista de combustíveis (postos),0.5200990467926082,Alto,135,1,1,0.08333333333333333,Outros,2.8,5,0,0,3.0,0.2
+EMP_RJ_01331,Ativa,Comércio varejista de combustíveis (postos),0.5195666373323676,Alto,136,0,1,0.3333333333333333,P3: Laranja societário,3.4,1,0,0,17.0,0.25
+EMP_RJ_01379,Ativa,Comércio atacadista de combustíveis,0.5187122373360267,Alto,137,1,1,0.16666666666666666,Outros,2.4,1,0,0,1.0,0.21731448763250882
+EMP_RJ_01467,Ativa,Comércio varejista de combustíveis (postos),0.5180696198813428,Alto,138,1,1,0.08333333333333333,Outros,0.6,1,0,0,4.0,0.3333333333333333
+EMP_RJ_01458,Ativa,Comércio varejista de combustíveis (postos),0.5175376310190756,Alto,139,1,1,0.08333333333333333,Outros,0.8,3,0,0,4.0,0.21731448763250882
+EMP_RJ_01435,Ativa,Comércio atacadista de combustíveis,0.515214516125056,Alto,140,1,1,0.16666666666666666,P5: Ativa suspeita,1.3,0,0,1,1.0,0.21731448763250882
+EMP_RJ_01293,Ativa,Comércio varejista de combustíveis (postos),0.5151170351146966,Alto,141,1,1,0.16666666666666666,Outros,49.2,3,0,0,6.0,0.21731448763250882
+EMP_RJ_01437,Ativa,Extração de petróleo e gás natural,0.5138676915348394,Alto,142,1,1,0.16666666666666666,Outros,1.3,2,0,0,1.0,0.21731448763250882
+EMP_RJ_01377,Ativa,Comércio varejista de combustíveis (postos),0.5109302237691999,Alto,143,1,1,0.08333333333333333,Outros,2.4,2,0,0,3.0,0.25
+EMP_RJ_01477,Ativa,Comércio varejista de combustíveis (postos),0.5096485038649263,Alto,144,1,1,0.25,Outros,0.4,1,0,0,2.0,0.21731448763250882
+EMP_RJ_00092,Inapta,Comércio varejista de combustíveis (postos),0.5091558378839512,Alto,145,1,0,0.8333333333333334,P2: Empresa fantasma,25.5,0,2,1,1.0,0.16666666666666666
+EMP_RJ_01333,Ativa,Comércio varejista de combustíveis (postos),0.5089342543113384,Alto,146,1,1,0.08333333333333333,Outros,3.3,5,0,0,3.0,0.21731448763250882
+EMP_RJ_01495,Ativa,Extração de petróleo e gás natural,0.5081407246858417,Alto,147,0,1,0.4166666666666667,Outros,0.1,3,0,0,1.0,0.21731448763250882
+EMP_RJ_00409,Ativa,Comércio varejista de combustíveis (postos),0.5071731612525532,Alto,148,0,1,0.5,P3: Laranja societário,18.8,3,0,0,22.0,0.21731448763250882
+EMP_RJ_00570,Inapta,Comércio varejista de combustíveis (postos),0.5028008315738457,Alto,149,0,1,0.6666666666666666,P4: Abandono fiscal,15.4,2,0,0,1.0,0.35
+EMP_RJ_01402,Ativa,Comércio atacadista de combustíveis,0.5005413210953636,Alto,150,1,1,0.0,Outros,1.6,2,1,0,1.0,0.21731448763250882
