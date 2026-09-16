@@ -1,137 +1,170 @@
-# 🔍 Scoring de Risco de Fraude Fiscal — ICMS
+# 🔍 Machine Learning Aplicado à Detecção de Anomalias Fiscais na Cadeia de Combustíveis do RJ
 
-> **TCC — MBA em Data Science | USP ESALQ**  
-> Tema: Identificação de Uso Indevido de Créditos de ICMS via Análise de Dados Cadastrais  
-> Aluna: Kátia Rios Nóbrega de Mello  
-> Ano: 2026
+> **TCC — MBA em Data Science e Analytics | USP ESALQ**
+> **Aluna:** Kátia Rios Nóbrega de Mello
+> **Ano:** 2026
+> **Base de referência:** novembro/2025
 
 ---
 
 ## 📋 Descrição
 
-Este projeto desenvolve um modelo de detecção de padrões suspeitos de
-aproveitamento indevido de créditos de ICMS, utilizando dados públicos de
-CNPJs, cadastros de empresas sancionadas (CEIS) e técnicas de Machine Learning
-supervisionado e não supervisionado.
+Este projeto desenvolve um modelo de scoring de risco fiscal baseado em machine learning não supervisionado para identificar empresas com perfil anômalo na cadeia de combustíveis do Rio de Janeiro, utilizando exclusivamente dados públicos.
+
+A abordagem combina o algoritmo **Isolation Forest** para detecção de anomalias multivariadas, o algoritmo **DBSCAN** para identificação de clusters de comportamento empresarial e um escore de risco estruturado, resultando em um protocolo de priorização de auditorias fiscais com ganho de eficiência estimado em **10 vezes** em relação ao método tradicional de sorteio aleatório.
 
 **Pergunta de pesquisa:**
-> *É possível identificar automaticamente contribuintes com comportamento
-> suspeito de aproveitamento indevido de crédito de ICMS a partir de
-> padrões cadastrais e societários?*
+> *É possível identificar sistematicamente empresas com perfil anômalo na cadeia de combustíveis do Rio de Janeiro a partir de dados cadastrais públicos e técnicas de machine learning não supervisionado?*
 
 ---
 
-## 🏗️ Estrutura do Projeto
+## 🗂️ Estrutura do Projeto
 
 ```
 tcc-scoring-risco-icms/
 │
 ├── data/
-│   ├── raw/                  # Dados brutos baixados (não versionados)
-│   ├── temp/                 # Checkpoints intermediários (não versionados)
-│   └── processed/            # Datasets limpos e anonimizados (não versionados)
+│   ├── raw/                        # Dados brutos (não versionados — LGPD)
+│   └── processed/                  # Datasets processados (não versionados)
 │
 ├── src/
-│   ├── 01_coleta.py          # ✅ Coleta e feature engineering — CNPJ nov/2025
-│   ├── 02_preprocessamento.py # 🔜 Cruzamento com CEIS e preparação para modelagem
-│   ├── 03_feature_engineering.py # 🔜 Features avançadas
-│   ├── 04_modelagem.py       # 🔜 Isolation Forest + XGBoost
-│   ├── 05_avaliacao.py       # 🔜 Métricas e visualizações
-│   └── utils.py              # Funções auxiliares
+│   ├── 01_coleta.py                # Coleta e extração dos dados públicos
+│   ├── 02_preprocessamento.py      # Limpeza, filtros e anonimização
+│   ├── 03_feature_engineering.py   # Construção das 51 variáveis analíticas
+│   ├── 04_modelagem.py             # Isolation Forest + DBSCAN + score combinado
+│   ├── 05_avaliacao.py             # Métricas, visualizações e relatório executivo
+│   ├── gerar_graficos_eda.py       # Gráficos da análise exploratória (paleta azul)
+│   └── utils.py                    # Funções auxiliares
 │
 ├── notebooks/
-│   ├── 01_analise_exploratoria.ipynb
-│   ├── 02_graficos_e_visualizacoes.ipynb
-│   └── 03_experimentos_modelos.ipynb
+│   ├── 01_analise_exploratoria.ipynb    # EDA completa — 7 gráficos
+│   ├── 02_analise_anomalias.ipynb       # Análise profunda dos casos críticos
+│   └── 03_experimentos_parametros.ipynb # Justificativa empírica dos parâmetros
 │
 ├── outputs/
-│   ├── graficos/
-│   ├── tabelas/
-│   └── modelos/
+│   ├── graficos/                   # 26 gráficos (EDA + modelagem + experimentos)
+│   └── tabelas/                    # Resultados, top 50, lista de auditoria
 │
-├── docs/
-│   ├── referencias/
-│   └── texto_tcc/
-│
-├── venv/                     # Ambiente virtual (não versionado)
-├── requirements.txt
 ├── .gitignore
-└── README.md
+├── README.md
+└── requirements.txt
 ```
 
 ---
 
-## 🗂️ Fontes de Dados
+## 🗃️ Fontes de Dados
 
 | Fonte | Conteúdo | Referência |
 |---|---|---|
-| Receita Federal | Cadastro CNPJ — nov/2025 | arquivos.receitafederal.gov.br |
-| Portal Transparência | Empresas sancionadas (CEIS) | portaldatransparencia.gov.br |
-| CONFAZ | Arrecadação ICMS por estado | fazenda.gov.br/confaz |
+| Receita Federal do Brasil | Cadastro CNPJ — nov/2025 | dadosabertos.rfb.gov.br/CNPJ |
+| Portal da Transparência | CEIS — empresas sancionadas | portaldatransparencia.gov.br |
+| ANP | Vendas anuais de combustíveis por município 2024 | gov.br/anp |
 
 > **Conformidade legal:** todos os dados utilizados são públicos e abertos.
-> Identificadores foram anonimizados em conformidade com a LGPD (Lei 13.709/2018)
-> e o Art. 198 do Código Tributário Nacional.
-
----
-
-## 📊 Status do Dataset (nov/2025)
-
-| Indicador | Valor |
-|---|---|
-| Empresas analisadas | 5.060.707 |
-| Variáveis criadas | 21 |
-| Empresas novas (<1 ano) | 522.096 |
-| Empresas inaptas | 1.492.856 (29%) |
-| Empresas suspensas | 33.890 |
-| Sócio com múltiplas empresas | 348.535 |
-| Score de risco máximo | 9 |
-
----
-
-## 🤖 Abordagem Metodológica
-
-### Não Supervisionado
-| Modelo | Aplicação |
-|---|---|
-| Isolation Forest | Detecção de anomalias cadastrais |
-| DBSCAN | Clustering de perfis suspeitos |
-
-### Supervisionado
-| Modelo | Aplicação |
-|---|---|
-| XGBoost | Score de risco com rótulos do CEIS |
-| Random Forest | Comparativo e interpretabilidade |
+> CNPJs substituídos por identificadores anônimos (EMP_RJ_XXXXX) em conformidade
+> com a LGPD (Lei nº 13.709/2018) e o Art. 198 do Código Tributário Nacional.
+> Arquivos com dados brutos **não** são versionados neste repositório.
 
 ---
 
 ## ⚙️ Como Executar
 
+### 1. Configurar o ambiente
+
 ```bash
-# 1. Ativar ambiente virtual
-source venv/bin/activate
+# Criar e ativar o ambiente virtual
+python3 -m venv venv
+source venv/bin/activate       # Linux/Mac
 
-# 2. Instalar dependências
+# Instalar dependências
 pip install -r requirements.txt
-
-# 3. Executar pipeline
-python3 src/01_coleta.py        # ✅ Concluído
-python3 src/02_preprocessamento.py
-python3 src/03_feature_engineering.py
-python3 src/04_modelagem.py
-python3 src/05_avaliacao.py
 ```
 
-> **Nota:** O script `01_coleta.py` usa checkpoints — se interrompido,
-> retoma automaticamente de onde parou ao ser executado novamente.
+### 2. Executar o pipeline completo
+
+```bash
+# Etapa 1 — Coleta de dados
+python src/01_coleta.py
+
+# Etapa 2 — Pré-processamento e anonimização
+python src/02_preprocessamento.py
+
+# Etapa 3 — Engenharia de atributos (51 variáveis)
+python src/03_feature_engineering.py
+
+# Etapa 4 — Modelagem (IF + DBSCAN + score combinado)
+python src/04_modelagem.py
+
+# Etapa 5 — Avaliação e relatório executivo
+python src/05_avaliacao.py
+```
+
+### 3. Exploração interativa
+
+```bash
+jupyter notebook notebooks/
+```
+
+---
+
+## 🤖 Modelos e Parâmetros
+
+| Modelo | Tipo | Parâmetros | Resultado |
+|---|---|---|---|
+| Isolation Forest | Não supervisionado | n_estimators=200, contamination=0.10 | 152 anomalias (10,0%) |
+| DBSCAN | Não supervisionado | eps=1.5, min_samples=5, PCA=10 | 34 clusters, 250 outliers |
+| Score combinado | Híbrido | IF(50%) + Manual(30%) + DBSCAN(20%) | 8 críticas, 142 altas |
+
+---
+
+## 📊 Resultados Principais
+
+- **1.520 empresas** analisadas em 6 segmentos da cadeia de combustíveis do RJ
+- **51 variáveis** construídas em 5 grupos temáticos
+- **152 anomalias** detectadas pelo Isolation Forest — 94,1% em situação ativa
+- **5 padrões** de anomalia fiscal identificados:
+  - P1: Capital incompatível com a operação (4 empresas)
+  - P2: Empresa fantasma — sem sócios + inapta (11 empresas)
+  - P3: Laranja societário — sócio em >10 empresas (44 empresas)
+  - P4: Abandono fiscal — antiga + inapta (21 empresas)
+  - P5: Ativa suspeita — ativa + IF anômalo + sem sócios (19 empresas)
+- **Ganho de eficiência:** 10x em relação ao sorteio aleatório
+- **Silhouette DBSCAN:** 0,3705
+
+---
+
+## 📁 Outputs Gerados
+
+| Arquivo | Conteúdo |
+|---|---|
+| `outputs/graficos/EDA_01 a EDA_07` | Gráficos de análise exploratória |
+| `outputs/graficos/01 a 10` | Gráficos da modelagem |
+| `outputs/graficos/EXP_01 a EXP_05` | Gráficos dos experimentos de parâmetros |
+| `outputs/graficos/11 a 14` | Gráficos da análise de anomalias |
+| `outputs/tabelas/top50_suspeitas.csv` | Top 50 empresas mais suspeitas |
+| `outputs/tabelas/lista_prioridade_auditoria.csv` | 150 empresas prioritárias |
+| `outputs/tabelas/relatorio_executivo.txt` | Relatório completo dos achados |
 
 ---
 
 ## 📚 Referências Principais
 
-- Receita Federal do Brasil — Dados Abertos CNPJ
-- LGPD — Lei nº 13.709/2018
-- CTN — Código Tributário Nacional, Art. 198
-- Liu, F. T. et al. (2008). *Isolation Forest*. IEEE ICDM
-- Chandola, V. et al. (2009). *Anomaly Detection: A Survey*. ACM Computing Surveys
-- Akoglu, L. et al. (2015). *Graph-based Anomaly Detection and Description*
+- Liu, F.T.; Ting, K.M.; Zhou, Z.H. (2008). Isolation Forest. IEEE ICDM.
+- Ester, M. et al. (1996). DBSCAN. KDD-96.
+- Chandola, V.; Banerjee, A.; Kumar, V. (2009). Anomaly Detection: A Survey. ACM.
+- Pedregosa, F. et al. (2011). Scikit-learn: Machine Learning in Python. JMLR.
+- Xavier, A.R. et al. (2022). Identificação de evasão fiscal com IA. RAP/FGV.
+- Lederman, L. (2021). The Fraud Triangle and Tax Evasion. Iowa Law Review.
+
+---
+
+## 📜 Conformidade e Privacidade
+
+Este projeto foi desenvolvido em estrita conformidade com:
+- **LGPD** (Lei nº 13.709/2018) — anonimização de todos os CNPJs
+- **CTN Art. 198** — sigilo fiscal preservado
+- **Dados exclusivamente públicos** — nenhum dado sigiloso foi acessado
+
+---
+
+*Repositório público para fins acadêmicos. Os dados brutos não estão incluídos.*
